@@ -8,38 +8,47 @@ import { HiOutlineDocumentReport } from 'react-icons/hi'
 import shirt from './img/cloth.png'
 import cap from './img/baseball-cap.png'
 import shoe from './img/sneakers.png'
-import Chart from 'react';
-
+import { Chart } from 'chart.js'
 
 const Header = () => {
 
-    // const dataDoughnut = {
-    //     labels: ["JavaScript", "Python", "Ruby"],
-    //     datasets: [
-    //         {
-    //             label: "My First Dataset",
-    //             data: [300, 50, 100],
-    //             backgroundColor: [
-    //                 "rgb(133, 105, 241)",
-    //                 "rgb(164, 101, 241)",
-    //                 "rgb(101, 143, 241)",
-    //             ],
-    //             hoverOffset: 4,
-    //         },
-    //     ],
-    // };
+    const dataDoughnut = {
+        labels: ["JavaScript", "Python", "Ruby"],
+        datasets: [
+            {
+                label: "My First Dataset",
+                data: [300, 50, 100],
+                backgroundColor: [
+                    "rgb(133, 105, 241)",
+                    "rgb(164, 101, 241)",
+                    "rgb(101, 143, 241)",
+                ],
+                hoverOffset: 4,
+            },
+        ],
+    };
 
-    // const configDoughnut = {
-    //     type: "doughnut",
-    //     data: dataDoughnut,
-    //     options: {},
-    // };
+    const configDoughnut = {
+        type: "doughnut",
+        data: dataDoughnut,
+        options: {},
+    };
 
-    // let chartBar = new Chart(
-    //     document.getElementById("chartDoughnut"),
-    //     configDoughnut
-    // );
+    var chartBar = async () => {
+        try {
+            let ele = await document.getElementById("chartDoughnut")
+            ele.destroy();
 
+            let chart = new Chart(
+                ele,
+                configDoughnut
+            );
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    chartBar();
+    console.log(document.getElementById('chartDoughnut'))
     return (
         <div>
             {/* Laptop */}
@@ -244,9 +253,9 @@ const Header = () => {
                     </div>
 
                     <div className='flex  w-48  h-96 bg-white drop-shadow-lg rounded-2xl absolute top-64 right-48 ml-5'>
-                        <div class="shadow-lg rounded-lg overflow-hidden">
-                            <div class="py-3 px-5 bg-gray-50">Doughnut chart</div>
-                            <canvas class="p-10" id="chartDoughnut"></canvas>
+                        <div className="shadow-lg rounded-lg overflow-hidden">
+                            <div className="py-3 px-5 bg-gray-50">Doughnut chart</div>
+                            <canvas className="p-10" id="chartDoughnut"></canvas>
                         </div>
 
 
