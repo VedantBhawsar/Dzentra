@@ -5,6 +5,9 @@ import { IoAddCircleSharp } from 'react-icons/io5'
 import { RiImageAddFill, RiFileList3Fill, RiArrowLeftSLine } from 'react-icons/ri'
 import { AiOutlineShop, AiFillTag, AiTwotoneSetting } from 'react-icons/ai'
 import { HiOutlineDocumentReport } from 'react-icons/hi'
+import shirt from './img/cloth.png'
+import cap from './img/baseball-cap.png'
+import shoe from './img/sneakers.png'
 
 
 const Header = () => {
@@ -162,14 +165,52 @@ const Header = () => {
                     <div className="flex flex-col items-start justify-start">
                         <div className="items-center flex justify-between">
                             <div className='text-2xl font-semibold mx-9 my-6 mr-14 text-black' >Today's Delivery</div>
-                            <input type="text" placeholder='Search Here' className='px-6 pr-16 ml-5 py-3 rounded-lg outline-1 outline-blue-400 bg-white border-2 ' />
-                            <select className='cursor-pointer outline-1 outline-blue-400 border-2 px-6 pr-16 ml-5 py-3  rounded-md text-gray-400  '>
+                            <input type="text" placeholder='Search Here' className='px-6 pr-16 ml-20 py-3 rounded-lg outline-1 outline-blue-400 bg-white border-2 ' />
+                            <select className=' cursor-pointer outline-1 outline-blue-400 border-2 px-6 pr-16 ml-7 py-3  rounded-md text-gray-400  '>
                                 <option value="" className=''>All Orders</option>
                                 <option value="" className=''>Marathi</option>
                             </select>
                         </div>
+                        <div>
+                        <div className="flex gap-10 ml-10">
+                            <div className='h-28 w-64 rounded-3xl border-2 border-yellow-300 text-black border-l-8  top-20 left-10'>
+                                <div className="flex justify-between my-2 mx-3" >
+                                    <div>98659865</div>
+                                    <div>ORD-0948</div>
+                                </div>
+                                <img src={shirt} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full my-4 mx-4' />
+                            </div>
 
-                        <div className='h-10 w-10 bg-black border-2 border-yellow-300'>
+                            <div className='h-28 w-64 rounded-3xl border-2 border-red-600 text-black border-l-8  top-20 left-'>
+                                <div className="flex justify-between my-2 mx-3" >
+                                    <div>ARIF</div>
+                                    <div>ORD-0949</div>
+                                </div>
+                                <div className="flex flex_col mt-4 ml-4 gap-4">
+                                    <img src={shirt} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full ' />
+                                    <img src={shirt} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full ' />
+                                </div>
+                            </div>
+
+                            <div className='h-28 w-64 rounded-3xl border-2 border-gray-500 text-black border-l-8  top-20 left-10'>
+                                <div className="flex justify-between my-2 mx-3" >
+                                    <div>shiyas</div>
+                                    <div>ORD-0950</div>
+                                </div>
+                                <img src={cap} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full my-4 mx-4' />
+                            </div>
+                        </div>
+                            <div className='h-28 w-64 rounded-3xl border-2 border-gray-500 text-black border-l-8  gap-10 ml-10 mt-6'>
+                                <div className="flex justify-between my-2 mx-3" >
+                                    <div>Walk in Customer</div>
+                                    <div>ORD-0951</div>
+                                </div>
+                                <div className="flex flex_col mt-4 ml-4 gap-4">
+                                    <img src={shoe} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full ' />
+                                    <img src={cap} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full ' />
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
