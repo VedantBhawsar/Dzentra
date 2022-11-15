@@ -8,9 +8,38 @@ import { HiOutlineDocumentReport } from 'react-icons/hi'
 import shirt from './img/cloth.png'
 import cap from './img/baseball-cap.png'
 import shoe from './img/sneakers.png'
+import Chart from 'react';
 
 
 const Header = () => {
+
+    // const dataDoughnut = {
+    //     labels: ["JavaScript", "Python", "Ruby"],
+    //     datasets: [
+    //         {
+    //             label: "My First Dataset",
+    //             data: [300, 50, 100],
+    //             backgroundColor: [
+    //                 "rgb(133, 105, 241)",
+    //                 "rgb(164, 101, 241)",
+    //                 "rgb(101, 143, 241)",
+    //             ],
+    //             hoverOffset: 4,
+    //         },
+    //     ],
+    // };
+
+    // const configDoughnut = {
+    //     type: "doughnut",
+    //     data: dataDoughnut,
+    //     options: {},
+    // };
+
+    // let chartBar = new Chart(
+    //     document.getElementById("chartDoughnut"),
+    //     configDoughnut
+    // );
+
     return (
         <div>
             {/* Laptop */}
@@ -210,18 +239,20 @@ const Header = () => {
                                         <img src={cap} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full ' />
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
 
                     <div className='flex  w-48  h-96 bg-white drop-shadow-lg rounded-2xl absolute top-64 right-48 ml-5'>
+                        <div class="shadow-lg rounded-lg overflow-hidden">
+                            <div class="py-3 px-5 bg-gray-50">Doughnut chart</div>
+                            <canvas class="p-10" id="chartDoughnut"></canvas>
+                        </div>
+
+
 
                     </div>
                 </div>
-
-
             </div>
 
 
@@ -249,8 +280,111 @@ const Header = () => {
                     </div>
                 </div>
 
+                <div className="flex flex-col justify-center items-center gap-7 mt-16">
+
+                    <div className='flex  w-5/6 h-32 bg-white drop-shadow-lg rounded-2xl border-2'>
+                        <div className="items-start justify-start">
+                            <div className='text-lg mx-7  my-4 text-gray-500' >PENDING ORDER</div>
+                            <div className='font-bold mx-7 text-2xl mt-7'>202</div>
+                        </div>
+                        <div className='bg-gray-400 w-14 h-14 rounded-full absolute right-5 top-10 p-3 items-center flex justify-center'>
+                            <BsFillBasket2Fill className='w-7 h-7 text-white' />
+                        </div>
+                    </div>
+
+                    <div className='flex  w-5/6 h-32 bg-white drop-shadow-lg rounded-2xl border-2'>
+                        <div className="items-start justify-start">
+                            <div className='text-lg mx-7  my-4 text-gray-500' >PROCESSING ORDER</div>
+                            <div className='font-bold mx-7 text-2xl mt-7'>99</div>
+                        </div>
+                        <div className='bg-yellow-400 w-14 h-14 rounded-full absolute right-5 top-10 p-3 items-center flex justify-center'>
+                            <FaReact className='w-7 h-7 text-white' />
+                        </div>
+                    </div>
+
+                    <div className='flex  w-5/6 h-32 bg-white drop-shadow-lg rounded-2xl border-2 '>
+                        <div className="items-start justify-start">
+                            <div className='text-lg mx-7  my-4 text-gray-500' >READY TO DELIVER</div>
+                            <div className='font-bold mx-7 text-2xl mt-7'>263</div>
+                        </div>
+                        <div className='bg-green-400 w-14 h-14 rounded-full absolute right-5 top-10 p-3 items-center flex justify-center'>
+                            <FaThumbsUp className='w-6 h-6 text-white' />
+                        </div>
+                    </div>
+
+                    <div className='flex  w-5/6 h-32 bg-white drop-shadow-lg rounded-2xl border-2'>
+                        <div className="items-start justify-start ">
+                            <div className='text-lg mx-7  my-4 text-gray-500' >DELIVER ORDERS</div>
+                            <div className='font-bold mx-7 text-2xl mt-7'>345</div>
+                        </div>
+                        <div className='bg-blue-400 w-14 h-14 rounded-full absolute right-5 top-10 p-3 items-center flex justify-center'>
+                            <BsCheck className='w-9 h-9 text-white' />
+                        </div>
+                    </div>
+
+
+                    <div className="flex justify-center items-center ">
+                        <div className='flex  w-5/6 h-auto bg-white  drop-shadow-lg rounded-2xl border-2'>
+                            <div className="flex flex-col items-center justify-center">
+                                <div className="items-center flex  mt-3 px-4 pb-4 pt-1 gap-5">
+                                    <div className='text-xl font-semibold  text-black w-1/5' >Today's Delivery</div>
+                                    <input type="text" placeholder='Search Here' className='px-2 w-1/3 py-2 rounded-lg outline-1 outline-blue-400 bg-white border-2 ' />
+                                    <select className=' cursor-pointer outline-1 outline-blue-400 border-2 px-2  py-2 w-32  rounded-md text-gray-400  '>
+                                        <option value="" className=''>All Orders</option>
+                                        <option value="" className=''>Marathi</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <div className="flex flex-col gap-7 ">
+                                        <div className='h-28 w-80 mt-3 rounded-3xl border-2 border-yellow-300 text-black border-l-8 drop-shadow-lg'>
+                                            <div className="flex justify-between my-2 mx-3" >
+                                                <div>98659865</div>
+                                                <div>ORD-0948</div>
+                                            </div>
+                                            <img src={shirt} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full my-4 mx-4' />
+                                        </div>
+
+                                        <div className='h-28 w-80 rounded-3xl border-2 border-red-600 text-black border-l-8 drop-shadow-lg'>
+                                            <div className="flex justify-between my-2 mx-3" >
+                                                <div>ARIF</div>
+                                                <div>ORD-0949</div>
+                                            </div>
+                                            <div className="flex flex_col mt-4 ml-4 gap-4">
+                                                <img src={shirt} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full ' />
+                                                <img src={shirt} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full ' />
+                                            </div>
+                                        </div>
+
+                                        <div className='h-28 w-80 rounded-3xl border-2 border-gray-500 text-black border-l-8  drop-shadow-lg '>
+                                            <div className="flex justify-between my-2 mx-3" >
+                                                <div>shiyas</div>
+                                                <div>ORD-0950</div>
+                                            </div>
+                                            <img src={cap} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full my-4 mx-4' />
+                                        </div>
+                                        <div className='h-28 w-80 rounded-3xl border-2 border-gray-500 text-black border-l-8  gap-10 drop-shadow-lg'>
+                                            <div className="flex justify-between my-2 mx-3" >
+                                                <div>Walk in Customer</div>
+                                                <div>ORD-0951</div>
+                                            </div>
+                                            <div className="flex flex_col mt-4 ml-4 gap-4">
+                                                <img src={shoe} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full ' />
+                                                <img src={cap} alt="shirt" className='w-12 bg-slate-200 p-2 rounded-full ' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
             </div>
         </div >
+
     )
 }
 
